@@ -1,0 +1,57 @@
+<table mat-table [dataSource]="visitorsList" class="mat-elevation-z8" style="width: 100%;">
+
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="visitType">
+        <th mat-header-cell *matHeaderCellDef> Visit Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.visitType}} </td>
+    </ng-container>
+    <ng-container matColumnDef="personToVisit">
+        <th mat-header-cell *matHeaderCellDef> Person To Visit </th>
+        <td mat-cell *matCellDef="let element"> {{element.personToVisit}} </td>
+    </ng-container>
+    <ng-container matColumnDef="dateOfEntry">
+        <th mat-header-cell *matHeaderCellDef> Date Of Entry </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateOfEntry | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="timeOfEntry">
+        <th mat-header-cell *matHeaderCellDef> Time Of Entry </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeOfEntry}} </td>
+    </ng-container>
+    <ng-container matColumnDef="timeOfExit">
+        <th mat-header-cell *matHeaderCellDef> Time Of Exit </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeToExit}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<!-- <table>
+    <thead>
+        <th>Name</th>
+        <th>Index</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of visitorsList">
+            <td>{{hero.Name}}</td>
+            <td>{{hero.email}}</td>
+            <td>{{hero.typeOfVisit}}</td>
+            <td>{{hero.personToVisit}}</td>
+            <td>{{hero.dateOfEntry}}</td>
+            <td>{{hero.timeOfEntry}}</td>
+            <td>{{hero.timeToExit}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- {{visitorsList[0].Name | json}} -->

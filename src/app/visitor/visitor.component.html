@@ -1,0 +1,78 @@
+<div style="width:100%; overflow: auto; margin: 2rem 0 2rem 0; margin:auto"  fxLayoutGap="1rem" fxLayout="column" fxLayoutAlign="center center">
+    <div style="width:100%;background-color: blue;height: 3rem;padding: 0 10px 0 10px;"
+        fxLayoutAlign="space-between center" fxLayout="row">
+        <div style="font-size: 1rem; font-weight: bold;color: #ffffff;"> Visitor Register</div>
+        <!-- <div style="cursor: pointer;" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </div> -->
+    </div>
+    
+    <mat-card style="width: 40%;">
+    <form style="width:100%" fxLayoutGap="1rem" fxLayoutAlign="" fxLayout="row" [formGroup]="registerForm">
+        <div style="width:100%" fxLayoutGap="1rem" fxLayoutAlign="" fxLayout="row">
+            
+            <div style="width:100%; padding:10px" fxLayout="column" fxLayoutGap=1rem>
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                        <mat-form-field style="width:100%;">
+                            <input formControlName="Name" matInput placeholder="Name">
+                        </mat-form-field>                        
+                    
+                </div>
+
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                    <mat-form-field style="width:100%;">
+                        <input formControlName="email" matInput placeholder="Email">
+                    </mat-form-field>
+                </div>
+                
+                
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                    <mat-form-field style="width:100%;">
+                        <!-- <input type="text" matInput placeholder="State"> -->
+                        <mat-select formControlName="typeOfVisit" placeholder="Visit type">
+                            <mat-option value="Meeting">Meeting</mat-option>
+                            <mat-option value="Delievery">Delievery</mat-option>
+                            <mat-option value="Personal">Personal</mat-option>                            
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                    <mat-form-field style="width:100%;">
+                        <input formControlName="personToVisit" matInput placeholder="Person To Visit">
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field >
+                    <mat-label>Date of Entry</mat-label>
+                    <input readonly matInput  [matDatepicker]="picker" formControlName="dateOfEntry">
+                    <mat-datepicker-toggle matSuffix [for]="picker" disabled></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                    <mat-form-field style="width:100%;">
+                        <input formControlName="timeOfEntry" matInput placeholder="Time Of Entry">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%;">
+                    <mat-form-field style="width:100%;">
+                        <input formControlName="timeToExit" matInput placeholder="Time Of Exit">
+                    </mat-form-field>
+                </div>
+                
+                
+               
+                
+                
+                <div fxLayout="row" fxLayoutGap=1rem style="width:100%; " fxLayoutAlign="center center">
+                    <button mat-raised-button 
+                        >Cancel</button>
+                    <button mat-raised-button color="primary" (click)="onSubmit()"
+                        style="width: 5rem;">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-card>
+</div>
+    
